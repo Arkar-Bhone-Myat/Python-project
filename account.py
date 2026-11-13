@@ -1,5 +1,10 @@
 class Account:
 
+    # email and pass as private variable
+    # calling them normally cause error
+    # created two new functions just to access them
+    # (See below)
+
     def __init__(self, email : str , password : str):
         self.__email = email
         self.__password = password
@@ -19,6 +24,7 @@ class Account:
 
 
     #Validation
+    #These functions are used in Bank
 
     @staticmethod
 
@@ -53,12 +59,11 @@ class Account:
 
 
     # Get email and password
-
-    # This is only for backend
+    # Way to access private variable
 
     def getEmail(self):
         return self.__email
 
     def getPassword(self):
-        return self.__password#
+        return self.__password
 

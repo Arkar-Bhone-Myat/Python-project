@@ -9,6 +9,7 @@ class Bank:
         self.__accounts = []
 
     #SignUp function
+    #Main UI should work with return value
 
     def signUp(self, email : str , password : str):
 
@@ -27,6 +28,7 @@ class Bank:
         return True
 
     #login Function
+    #Login should only work after you signed up
 
     def login(self,email : str , password : str) -> "Account":
 
