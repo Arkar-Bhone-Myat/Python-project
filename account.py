@@ -8,6 +8,7 @@ class Account:
     def __init__(self, email : str , password : str):
         self.__email = email
         self.__password = password
+        self.__balance:float = 0.0
 
 
     def deposit(self):
@@ -18,6 +19,14 @@ class Account:
 
     def check_balance(self):
         pass
+
+    def transfer(self,target:Account, amount:float)-> bool:
+        """Return True if the transfer is successful, otherwise return False."""
+        if amount >= 0 and self.__balance >= amount:
+            self.__balance -= amount
+            target.setBalance(target.getBalance() + amount)
+            return True
+        return False
 
     def transaction_history(self):
         pass
@@ -67,3 +76,17 @@ class Account:
     def getPassword(self):
         return self.__password
 
+    # Get balance
+    
+    def getBalance(self):
+        """Return the current balance of the account."""
+        return self.__balance
+
+    #Set balance
+
+    def setBalance(self, balance : float)-> None:
+        """Set the balance of the account to the specified value."""
+        if balance >= 0:
+            self.__balance = balance
+        else:
+            raise ValueError("Balance cannot be negative.")
