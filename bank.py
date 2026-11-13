@@ -30,7 +30,7 @@ class Bank:
     #login Function
     #Login should only work after you signed up
 
-    def login(self,email : str , password : str) -> "Account":
+    def login(self,email : str , password : str) -> Account | None:
 
         for account in self.__accounts:
             if account.getEmail() == email and account.getPassword() == password:
